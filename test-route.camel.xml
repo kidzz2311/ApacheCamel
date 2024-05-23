@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<route id="test-route">
-    <from uri="direct:test"/>
-    <to uri="mock:test"/>
-</route>
-
