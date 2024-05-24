@@ -8,6 +8,6 @@
     </typeAliases>
     <mappers>
         <mapper resource="mybatis/xml/mapper/CityMapper.xml"/>
-        <!-- <mapper resource="mybatis/xml/mapper/HotelMapper.xml"/> -->
+        <mapper resource="mybatis/xml/mapper/HotelMapper.xml"/>
     </mappers>
 </configuration>

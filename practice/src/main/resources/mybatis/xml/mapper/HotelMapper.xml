@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.HotelMapper">
+
+    <resultMap id="HotelResultMap" type="Hotel">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="address" column="address"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="city" column="city"/>
+    </resultMap>
+
+    <select id="findById" resultMap="HotelResultMap">
+        select id, name, address, phone_number, city from hotel where id = #{id}
+    </select>
+    <select id="findByName" resultMap="HotelResultMap">
+        select id, name, address, phone_number, city from hotel where lower(name) like '%${name}%'
+    </select>
+    <select id="findAll" resultMap="HotelResultMap">
+        select id, name, address, phone_number, city from hotel
+    </select>
+    <insert id="insertHotel" parameterType="Hotel">
+        insert into hotel (name, address, phone_number, city) values (#{name}, #{address}, #{phoneNumber}, #{city})
+    </insert>
+    <update id="updateHotel" parameterType="Hotel">
+        update hotel set name = #{name}, address = #{address}, phone_number = #{phoneNumber}, city = #{city} where id = #{id}
+    </update>
+</mapper>
