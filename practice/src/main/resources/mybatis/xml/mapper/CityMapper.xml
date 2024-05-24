@@ -10,16 +10,16 @@
         <result property="country" column="country"/>
     </resultMap>
 
-    <select id="findById" resultType="City">
+    <select id="findById" resultMap="CityResultMap">
         select id, name, state, country from city where id = #{id}
     </select>
-    <select id="findByState" resultType="City">
+    <select id="findByState" resultMap="CityResultMap">
         select id, name, state, country from city where state = #{state}
     </select>
-    <select id="findByName" resultType="City">
+    <select id="findByName" resultMap="CityResultMap">
         select id, name, state, country from city where lower(name) like '%${name}%'
     </select>
-    <select id="findAll" resultType="City">
+    <select id="findAll" resultMap="CityResultMap">
         select id, name, state, country from city
     </select>
     <select id="selectComplexCity" resultType="City">
