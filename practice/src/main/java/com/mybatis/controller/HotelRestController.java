@@ -13,7 +13,6 @@ import com.mybatis.Service.HotelService;
 import com.mybatis.domain.Hotel;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
